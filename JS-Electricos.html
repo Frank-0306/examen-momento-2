@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="JS Eléctricos: instalaciones eléctricas residenciales y soluciones de iluminación moderna." name="description"/>
+  <title>
+   JS Eléctricos | Seguridad que conecta
+  </title>
+  <style>
+   
+/* IDENTIDAD CORPORATIVA Y REGLAS GENERALES */
+:root {
+    --color-principal:#1e3a8a;
+    --azul-oscuro:#102653;
+    --azul-medio:#2856ad;
+    --color-secundario:#64748b;
+    --color-complementario:#facc15;
+    --color-fondo:#ffffff;
+    --color-texto:#1e293b;
+    --fondo-suave:#f3f6fb;
+    --borde:#e2e8f0;
+    --sombra:0 12px 35px rgba(20,45,90,.09)
+}
+
+* {
+    box-sizing:border-box
+}
+
+html {
+    scroll-behavior:smooth
+}
+
+body {
+    margin:0;
+    font-family:Arial,sans-serif;
+    color:var(--color-texto);
+    background:white;
+    line-height:1.65
+}
+
+h1,h2,h3 {
+    font-family:Helvetica,Arial,sans-serif;
+    line-height:1.18;
+    margin-top:0
+}
+
+h1 {
+    font-size:clamp(36px,4.5vw,64px);
+    letter-spacing:-2px;
+    margin-bottom:24px
+}
+
+h2 {
+    font-size:clamp(29px,3vw,42px);
+    letter-spacing:-1px;
+    margin-bottom:18px
+}
+
+h3 {
+    font-size:21px;
+    margin-bottom:12px
+}
+
+p {
+    margin-top:0
+}
+
+a {
+    text-decoration:none;
+    color:inherit
+}
+
+img {
+    display:block;
+    max-width:100%;
+    height:auto
+}
+
+.contenedor {
+    width:90%;
+    max-width:1200px;
+    margin:auto
+}
+
+.seccion {
+    padding:94px 0
+}
+
+.seccion-clara {
+    background:var(--fondo-suave)
+}
+
+.etiqueta {
+    display:inline-block;
+    color:var(--azul-medio);
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:14px
+}
+
+.titulo-seccion {
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 45px
+}
+
+.titulo-seccion p {
+    color:var(--color-secundario)
+}
+
+.subrayado {
+    width:55px;
+    height:5px;
+    background:var(--color-complementario);
+    border-radius:8px;
+    margin:20px 0
+}
+
+.titulo-seccion .subrayado {
+    margin:20px auto
+}
+
+.boton {
+    display:inline-block;
+    padding:14px 25px;
+    border-radius:9px;
+    font-size:14px;
+    font-weight:800;
+    transition:transform .2s,background .2s,box-shadow .2s;
+    border:2px solid transparent;
+    text-align:center;
+    cursor:pointer
+}
+
+.boton:hover {
+    transform:translateY(-3px);
+    box-shadow:0 8px 18px rgba(0,0,0,.15)
+}
+
+.boton-amarillo {
+    background:var(--color-complementario);
+    color:#172541
+}
+
+.boton-amarillo:hover {
+    background:#ffe46a
+}
+
+.boton-borde {
+    border-color:#d4def0;
+    color:var(--color-principal);
+    background:white
+}
+
+.boton-borde:hover {
+    background:#eaf0fb
+}
+
+.boton-azul {
+    background:var(--color-principal);
+    color:white
+}
+
+.boton-azul:hover {
+    background:var(--azul-medio)
+}
+
+/* ENCABEZADO CON FLEXBOX */
+.encabezado {
+    background:var(--azul-oscuro);
+    color:white;
+    border-bottom:1px solid rgba(255,255,255,.14)
+}
+
+.barra-navegacion {
+    min-height:88px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px
+}
+
+.marca {
+    display:flex;
+    align-items:center;
+    gap:13px
+}
+
+.marca-simbolo {
+    width:49px;
+    height:49px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:2px solid var(--color-complementario);
+    border-radius:12px;
+    color:var(--color-complementario);
+    font-size:22px;
+    font-weight:900;
+    letter-spacing:-3px
+}
+
+.marca-nombre {
+    font-size:20px;
+    font-weight:900;
+    letter-spacing:.3px;
+    line-height:1.1
+}
+
+.marca-nombre small {
+    display:block;
+    font-size:10px;
+    color:#bdcbe7;
+    letter-spacing:1.8px;
+    margin-top:5px
+}
+
+.menu {
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:23px
+}
+
+.menu a {
+    font-size:13px;
+    font-weight:700;
+    color:#dce6fa;
+    transition:color .2s
+}
+
+.menu a:hover {
+    color:var(--color-complementario)
+}
+
+/* PORTADA */
+.hero {
+    background:linear-gradient(115deg,#f1f5fc 0%,#fff 68%);
+    padding:85px 0 95px
+}
+
+.hero-contenido {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:65px
+}
+
+.hero-texto,.hero-imagen {
+    flex:1;
+    min-width:0
+}
+
+.hero-texto h1 {
+    color:var(--azul-oscuro)
+}
+
+.hero-texto h1 span {
+    color:var(--azul-medio)
+}
+
+.hero-texto>p {
+    font-size:17px;
+    color:#53647d;
+    max-width:520px
+}
+
+.hero-botones {
+    display:flex;
+    gap:13px;
+    flex-wrap:wrap;
+    margin-top:30px
+}
+
+.hero-detalles {
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
+    margin-top:37px;
+    color:#52627b;
+    font-size:12px;
+    font-weight:700
+}
+
+.hero-detalles span:before {
+    content:'✓';
+    color:var(--azul-medio);
+    margin-right:7px
+}
+
+.hero-imagen {
+    position:relative
+}
+
+.hero-imagen img {
+    width:100%;
+    height:475px;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 25px 55px rgba(16,38,83,.2)
+}
+
+.sello-imagen {
+    position:absolute;
+    left:-22px;
+    bottom:24px;
+    background:white;
+    padding:18px 23px;
+    border-radius:12px;
+    box-shadow:var(--sombra);
+    border-left:5px solid var(--color-complementario);
+    font-weight:800;
+    color:var(--azul-oscuro);
+    font-size:14px
+}
+
+.sello-imagen small {
+    display:block;
+    color:#66758b;
+    font-size:11px;
+    font-weight:400;
+    margin-top:4px
+}
+
+/* BANDA DE VALORES */
+.banda {
+    background:var(--color-principal);
+    color:white
+}
+
+.banda-contenido {
+    display:flex;
+    justify-content:space-around;
+    flex-wrap:wrap;
+    gap:20px;
+    padding:26px 0
+}
+
+.banda-item {
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:.4px
+}
+
+.banda-item strong {
+    color:var(--color-complementario);
+    margin-right:10px;
+    font-size:20px
+}
+
+/* NOSOTROS */
+.nosotros-contenido {
+    display:flex;
+    align-items:center;
+    gap:75px
+}
+
+.nosotros-imagen,.nosotros-texto {
+    flex:1;
+    min-width:0
+}
+
+.nosotros-imagen img {
+    width:100%;
+    height:450px;
+    object-fit:cover;
+    border-radius:17px;
+    box-shadow:var(--sombra)
+}
+
+.nosotros-texto p {
+    color:#5c6b7d
+}
+
+.lista-ventajas {
+    list-style:none;
+    padding:0;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin:25px 0
+}
+
+.lista-ventajas li {
+    width:calc(50% - 6px);
+    font-size:14px;
+    font-weight:700;
+    color:var(--azul-oscuro)
+}
+
+.lista-ventajas li:before {
+    content:'✓';
+    display:inline-block;
+    background:#e8f1ff;
+    color:var(--color-principal);
+    padding:0 7px;
+    border-radius:50%;
+    margin-right:8px
+}
+
+/* SERVICIOS */
+.servicios-contenedor {
+    display:flex;
+    flex-wrap:wrap;
+    gap:24px
+}
+
+.servicio {
+    flex:1 1 calc(33.333% - 24px);
+    min-width:270px;
+    background:white;
+    border:1px solid var(--borde);
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 18px rgba(18,40,80,.045);
+    transition:transform .2s,box-shadow .2s,border-color .2s
+}
+
+.servicio:hover {
+    transform:translateY(-6px);
+    box-shadow:var(--sombra);
+    border-color:#a9c2f0
+}
+
+.servicio img {
+    width:100%;
+    height:205px;
+    object-fit:cover
+}
+
+.servicio-contenido {
+    padding:25px
+}
+
+.servicio-numero {
+    color:var(--azul-medio);
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:1px
+}
+
+.servicio h3 {
+    margin:9px 0 12px;
+    color:var(--azul-oscuro)
+}
+
+.servicio p {
+    color:#64748b;
+    font-size:14px;
+    min-height:69px
+}
+
+.servicio .boton {
+    font-size:12px;
+    padding:11px 17px
+}
+
+/* BENEFICIOS */
+.beneficios-contenedor {
+    display:flex;
+    flex-wrap:wrap;
+    gap:24px
+}
+
+.beneficio {
+    flex:1 1 240px;
+    background:#fff;
+    padding:35px 30px;
+    border:1px solid var(--borde);
+    border-radius:15px;
+    border-top:5px solid var(--color-complementario);
+    box-shadow:var(--sombra)
+}
+
+.beneficio-icono {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:60px;
+    height:60px;
+    background:#eaf1ff;
+    border-radius:14px;
+    font-size:27px;
+    margin-bottom:24px
+}
+
+.beneficio h3 {
+    color:var(--azul-oscuro)
+}
+
+.beneficio p {
+    color:#617086;
+    font-size:14px;
+    margin:0
+}
+
+/* TABLA */
+.tabla-contenedor {
+    overflow-x:auto;
+    border-radius:14px;
+    box-shadow:var(--sombra);
+    border:1px solid var(--borde)
+}
+
+.tabla-servicios {
+    width:100%;
+    border-collapse:collapse;
+    min-width:650px;
+    text-align:left
+}
+
+.tabla-servicios th {
+    background:var(--azul-oscuro);
+    color:white;
+    padding:19px 21px;
+    font-size:13px
+}
+
+.tabla-servicios td {
+    padding:17px 21px;
+    border-bottom:1px solid var(--borde);
+    font-size:13px
+}
+
+.tabla-servicios tbody tr:nth-child(even) {
+    background:#f3f7fd
+}
+
+.tabla-servicios tbody tr:hover {
+    background:#eaf1ff
+}
+
+.tabla-servicios tbody tr:last-child td {
+    border-bottom:0
+}
+
+/* GALERIA */
+.galeria-contenedor {
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px
+}
+
+.galeria-elemento {
+    flex:1 1 calc(33.333% - 20px);
+    min-width:250px;
+    position:relative;
+    overflow:hidden;
+    border-radius:14px;
+    box-shadow:var(--sombra)
+}
+
+.galeria-elemento img {
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    transition:transform .25s
+}
+
+.galeria-elemento:hover img {
+    transform:scale(1.04)
+}
+
+.galeria-elemento span {
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    background:linear-gradient(transparent,rgba(9,22,48,.85));
+    color:white;
+    font-size:14px;
+    font-weight:800;
+    padding:40px 20px 17px
+}
+
+/* LLAMADO A LA ACCION */
+.llamado {
+    background:var(--color-principal);
+    color:white;
+    padding:60px 0
+}
+
+.llamado-contenido {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px
+}
+
+.llamado h2 {
+    font-size:32px;
+    margin-bottom:10px
+}
+
+.llamado p {
+    color:#d5e1fb;
+    margin:0
+}
+
+/* FORMULARIO */
+.contacto-contenido {
+    display:flex;
+    gap:55px;
+    align-items:flex-start
+}
+
+.contacto-info {
+    flex:1
+}
+
+.contacto-info p {
+    color:#637186
+}
+
+.contacto-tarjeta {
+    background:var(--fondo-suave);
+    padding:25px;
+    border-radius:12px;
+    margin-top:25px;
+    border-left:4px solid var(--color-complementario)
+}
+
+.contacto-tarjeta strong {
+    color:var(--azul-oscuro)
+}
+
+.contacto-tarjeta p {
+    font-size:13px;
+    margin:8px 0 0
+}
+
+.formulario {
+    flex:1.25;
+    background:white;
+    padding:35px;
+    border:1px solid var(--borde);
+    border-radius:17px;
+    box-shadow:var(--sombra)
+}
+
+.formulario-fila {
+    display:flex;
+    gap:18px
+}
+
+.campo {
+    flex:1;
+    min-width:0;
+    margin-bottom:20px
+}
+
+.campo label {
+    display:block;
+    font-size:13px;
+    font-weight:800;
+    color:#33445d;
+    margin-bottom:7px
+}
+
+.campo input,.campo select,.campo textarea {
+    width:100%;
+    font:inherit;
+    font-size:14px;
+    padding:13px 14px;
+    border:1px solid #d5deeb;
+    border-radius:8px;
+    background:#fbfcff;
+    color:#1e293b;
+    outline:none;
+    transition:border-color .2s,box-shadow .2s
+}
+
+.campo input:focus,.campo select:focus,.campo textarea:focus {
+    border-color:var(--azul-medio);
+    box-shadow:0 0 0 3px rgba(40,86,173,.12)
+}
+
+.campo textarea {
+    min-height:115px;
+    resize:vertical
+}
+
+.formulario .boton {
+    width:100%
+}
+
+.nota-formulario {
+    font-size:11px;
+    color:#718096;
+    margin:14px 0 0
+}
+
+/* PIE DE PAGINA */
+.pie-pagina {
+    background:#0d1d3a;
+    color:white;
+    padding:60px 0 20px
+}
+
+.pie-contenido {
+    display:flex;
+    justify-content:space-between;
+    gap:45px;
+    flex-wrap:wrap;
+    padding-bottom:38px
+}
+
+.pie-columna {
+    flex:1 1 200px
+}
+
+.pie-columna h3 {
+    font-size:16px;
+    color:white;
+    margin-bottom:19px
+}
+
+.pie-columna p,.pie-columna a {
+    font-size:13px;
+    color:#b8c6dd
+}
+
+.pie-columna a {
+    display:block;
+    margin:9px 0
+}
+
+.pie-columna a:hover {
+    color:var(--color-complementario)
+}
+
+.pie-final {
+    border-top:1px solid #293957;
+    padding-top:20px;
+    text-align:center;
+    color:#a9b8d0;
+    font-size:12px
+}
+
+/* ADAPTACION A TABLET Y CELULAR */
+@media(max-width:1000px) {
+    .barra-navegacion {
+        flex-direction:column;
+        padding:20px 0;
+        gap:17px
+    }
+
+    .menu {
+        justify-content:center
+    }
+
+    .hero-contenido {
+        gap:35px
+    }
+
+    .hero-imagen img {
+        height:390px
+    }
+
+    .nosotros-contenido {
+        gap:35px
+    }
+
+}
+
+@media(max-width:768px) {
+    .contenedor {
+        width:90%
+    }
+
+    .seccion {
+        padding:65px 0
+    }
+
+    .hero {
+        padding:60px 0
+    }
+
+    .hero-contenido,.nosotros-contenido,.contacto-contenido,.llamado-contenido {
+        flex-direction:column
+    }
+
+    .hero-texto,.hero-imagen,.nosotros-imagen,.nosotros-texto,.contacto-info,.formulario {
+        width:100%
+    }
+
+    .hero-imagen img {
+        height:340px
+    }
+
+    .sello-imagen {
+        left:12px
+    }
+
+    .nosotros-imagen img {
+        height:320px
+    }
+
+    .menu {
+        gap:12px 18px
+    }
+
+    .menu a {
+        font-size:12px
+    }
+
+    .servicio {
+        flex:1 1 100%
+    }
+
+    .beneficio {
+        flex:1 1 100%
+    }
+
+    .galeria-elemento {
+        flex:1 1 calc(50% - 20px);
+        min-width:190px
+    }
+
+    .formulario {
+        padding:24px
+    }
+
+    .llamado-contenido {
+        text-align:center
+    }
+
+    .formulario-fila {
+        flex-direction:column;
+        gap:0
+    }
+
+}
+
+@media(max-width:480px) {
+    h1 {
+        font-size:36px;
+        letter-spacing:-1px
+    }
+
+    .marca-nombre {
+        font-size:18px
+    }
+
+    .hero-botones .boton {
+        width:100%
+    }
+
+    .hero-detalles {
+        gap:12px
+    }
+
+    .hero-imagen img {
+        height:260px
+    }
+
+    .lista-ventajas li {
+        width:100%
+    }
+
+    .galeria-elemento {
+        flex:1 1 100%
+    }
+
+    .galeria-elemento img {
+        height:225px
+    }
+
+    .banda-contenido {
+        justify-content:flex-start
+    }
+
+    .banda-item {
+        width:100%
+    }
+
+    .formulario {
+        padding:18px
+    }
+
+}
+
+
+  </style>
+ </head>
+ <body>
+  <!-- ENCABEZADO -->
+  <header class="encabezado" id="inicio">
+   <div class="contenedor barra-navegacion">
+    <a class="marca" href="#inicio">
+     <span class="marca-simbolo">
+      JS
+     </span>
+     <span class="marca-nombre">
+      JS ELÉCTRICOS
+      <small>
+       ENERGÍA · ILUMINACIÓN
+      </small>
+     </span>
+    </a>
+    <nav aria-label="Navegación principal" class="menu">
+     <a href="#inicio">
+      Inicio
+     </a>
+     <a href="#nosotros">
+      Nosotros
+     </a>
+     <a href="#servicios">
+      Servicios
+     </a>
+     <a href="#beneficios">
+      Beneficios
+     </a>
+     <a href="#galeria">
+      Galería
+     </a>
+     <a href="#contacto">
+      Contacto
+     </a>
+    </nav>
+   </div>
+  </header>
+  <main>
+   <!-- HERO -->
+   <section class="hero">
+    <div class="contenedor hero-contenido">
+     <div class="hero-texto">
+      <span class="etiqueta">
+       INSTALACIONES ELÉCTRICAS E ILUMINACIÓN
+      </span>
+      <h1>
+       Seguridad que conecta.
+       <span>
+        Iluminación que transforma.
+       </span>
+      </h1>
+      <p>
+       Transformamos tus espacios con soluciones eléctricas residenciales seguras, funcionales y con un diseño de iluminación moderno.
+      </p>
+      <div class="hero-botones">
+       <a class="boton boton-amarillo" href="#contacto">
+        Solicitar cotización →
+       </a>
+       <a class="boton boton-borde" href="#servicios">
+        Explorar servicios
+       </a>
+      </div>
+      <div class="hero-detalles">
+       <span>
+        Atención personalizada
+       </span>
+       <span>
+        Soluciones residenciales
+       </span>
+      </div>
+     </div>
+     <div class="hero-imagen">
+      <img alt="Sala de apartamento moderno con iluminación residencial" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"/>
+      <div class="sello-imagen">
+       Espacios que inspiran
+       <small>
+        Electricidad e iluminación residencial
+       </small>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- BANDA -->
+   <div class="banda">
+    <div class="contenedor banda-contenido">
+     <div class="banda-item">
+      <strong>
+       01
+      </strong>
+      SEGURIDAD
+     </div>
+     <div class="banda-item">
+      <strong>
+       02
+      </strong>
+      FUNCIONALIDAD
+     </div>
+     <div class="banda-item">
+      <strong>
+       03
+      </strong>
+      DISEÑO MODERNO
+     </div>
+     <div class="banda-item">
+      <strong>
+       04
+      </strong>
+      CONFIANZA
+     </div>
+    </div>
+   </div>
+   <!-- NOSOTROS -->
+   <section class="seccion" id="nosotros">
+    <div class="contenedor nosotros-contenido">
+     <div class="nosotros-imagen">
+      <img alt="Profesional trabajando en una instalación eléctrica" src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&amp;fit=crop&amp;w=1100&amp;q=85"/>
+     </div>
+     <div class="nosotros-texto">
+      <span class="etiqueta">
+       CONOCE JS ELÉCTRICOS
+      </span>
+      <h2>
+       Soluciones eléctricas pensadas para tus espacios.
+      </h2>
+      <div class="subrayado">
+      </div>
+      <p>
+       Somos un negocio enfocado en instalaciones eléctricas residenciales y soluciones de iluminación para apartamentos y viviendas.
+      </p>
+      <p>
+       Combinamos seguridad, organización y estética para adaptar cada instalación a las necesidades del espacio y de las personas que lo habitan.
+      </p>
+      <ul class="lista-ventajas">
+       <li>
+        Instalaciones residenciales
+       </li>
+       <li>
+        Adecuación de cableado
+       </li>
+       <li>
+        Iluminación moderna
+       </li>
+       <li>
+        Trabajo organizado
+       </li>
+      </ul>
+      <a class="boton boton-azul" href="#contacto">
+       Hablemos de tu proyecto →
+      </a>
+     </div>
+    </div>
+   </section>
+   <!-- SERVICIOS -->
+   <section class="seccion seccion-clara" id="servicios">
+    <div class="contenedor">
+     <div class="titulo-seccion">
+      <span class="etiqueta">
+       LO QUE HACEMOS
+      </span>
+      <h2>
+       Nuestros servicios
+      </h2>
+      <div class="subrayado">
+      </div>
+      <p>
+       Soluciones diseñadas para mejorar la seguridad, funcionalidad y apariencia de tu hogar.
+      </p>
+     </div>
+     <div class="servicios-contenedor">
+      <article class="servicio">
+       <img alt="Trabajo de instalación eléctrica residencial" src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+       <div class="servicio-contenido">
+        <span class="servicio-numero">
+         SERVICIO 01
+        </span>
+        <h3>
+         Instalaciones eléctricas
+        </h3>
+        <p>
+         Instalación y adecuación de sistemas eléctricos para apartamentos y espacios residenciales.
+        </p>
+        <a class="boton boton-borde" href="#contacto">
+         Consultar servicio →
+        </a>
+       </div>
+      </article>
+      <article class="servicio">
+       <img alt="Trabajo técnico de adecuación de instalaciones y cableado" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+       <div class="servicio-contenido">
+        <span class="servicio-numero">
+         SERVICIO 02
+        </span>
+        <h3>
+         Adecuación de cableado
+        </h3>
+        <p>
+         Organización, modificación y mejora del cableado según las necesidades de cada espacio.
+        </p>
+        <a class="boton boton-borde" href="#contacto">
+         Consultar servicio →
+        </a>
+       </div>
+      </article>
+      <article class="servicio">
+       <img alt="Iluminación ambiental LED en un espacio interior" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+       <div class="servicio-contenido">
+        <span class="servicio-numero">
+         SERVICIO 03
+        </span>
+        <h3>
+         Instalación de cintas LED
+        </h3>
+        <p>
+         Iluminación ambiental para crear espacios modernos, acogedores y funcionales.
+        </p>
+        <a class="boton boton-borde" href="#contacto">
+         Consultar servicio →
+        </a>
+       </div>
+      </article>
+      <article class="servicio">
+       <img alt="Iluminación empotrada tipo bala en un interior moderno" src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+       <div class="servicio-contenido">
+        <span class="servicio-numero">
+         SERVICIO 04
+        </span>
+        <h3>
+         Luces tipo bala
+        </h3>
+        <p>
+         Montaje de iluminación focalizada para techos, pasillos y zonas interiores.
+        </p>
+        <a class="boton boton-borde" href="#contacto">
+         Consultar servicio →
+        </a>
+       </div>
+      </article>
+      <article class="servicio">
+       <img alt="Lámpara decorativa instalada en una habitación" src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+       <div class="servicio-contenido">
+        <span class="servicio-numero">
+         SERVICIO 05
+        </span>
+        <h3>
+         Lámparas decorativas
+        </h3>
+        <p>
+         Instalación de lámparas que complementan el estilo y diseño de interiores.
+        </p>
+        <a class="boton boton-borde" href="#contacto">
+         Consultar servicio →
+        </a>
+       </div>
+      </article>
+      <article class="servicio">
+       <img alt="Apartamento con iluminación residencial moderna" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+       <div class="servicio-contenido">
+        <span class="servicio-numero">
+         SERVICIO 06
+        </span>
+        <h3>
+         Adecuación de iluminación
+        </h3>
+        <p>
+         Mejoras de iluminación que combinan funcionalidad, confort y estética.
+        </p>
+        <a class="boton boton-borde" href="#contacto">
+         Consultar servicio →
+        </a>
+       </div>
+      </article>
+     </div>
+    </div>
+   </section>
+   <!-- BENEFICIOS -->
+   <section class="seccion" id="beneficios">
+    <div class="contenedor">
+     <div class="titulo-seccion">
+      <span class="etiqueta">
+       NUESTRO COMPROMISO
+      </span>
+      <h2>
+       ¿Por qué elegir JS Eléctricos?
+      </h2>
+      <div class="subrayado">
+      </div>
+      <p>
+       Cuidamos los detalles técnicos y visuales de cada proyecto.
+      </p>
+     </div>
+     <div class="beneficios-contenedor">
+      <article class="beneficio">
+       <div class="beneficio-icono">
+        🛡️
+       </div>
+       <h3>
+        Seguridad
+       </h3>
+       <p>
+        Instalaciones orientadas a un funcionamiento adecuado y seguro para tu vivienda.
+       </p>
+      </article>
+      <article class="beneficio">
+       <div class="beneficio-icono">
+        ⚡
+       </div>
+       <h3>
+        Profesionalismo
+       </h3>
+       <p>
+        Trabajo organizado y soluciones adaptadas a las necesidades de cada proyecto.
+       </p>
+      </article>
+      <article class="beneficio">
+       <div class="beneficio-icono">
+        💡
+       </div>
+       <h3>
+        Iluminación moderna
+       </h3>
+       <p>
+        Ambientes que equilibran funcionalidad, comodidad y diseño contemporáneo.
+       </p>
+      </article>
+     </div>
+    </div>
+   </section>
+   <!-- TABLA -->
+   <section class="seccion seccion-clara" id="soluciones">
+    <div class="contenedor">
+     <div class="titulo-seccion">
+      <span class="etiqueta">
+       INFORMACIÓN DE SERVICIOS
+      </span>
+      <h2>
+       Servicios y soluciones
+      </h2>
+      <div class="subrayado">
+      </div>
+      <p>
+       Conoce las aplicaciones de nuestros principales trabajos residenciales.
+      </p>
+     </div>
+     <div class="tabla-contenedor">
+      <table class="tabla-servicios">
+       <thead>
+        <tr>
+         <th>
+          Servicio
+         </th>
+         <th>
+          Tipo
+         </th>
+         <th>
+          Aplicación
+         </th>
+         <th>
+          Información
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td>
+          Instalación eléctrica
+         </td>
+         <td>
+          Residencial
+         </td>
+         <td>
+          Apartamentos
+         </td>
+         <td>
+          Adecuación del sistema eléctrico
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Cintas LED
+         </td>
+         <td>
+          Iluminación
+         </td>
+         <td>
+          Interiores
+         </td>
+         <td>
+          Iluminación decorativa
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Luces tipo bala
+         </td>
+         <td>
+          Iluminación
+         </td>
+         <td>
+          Techos
+         </td>
+         <td>
+          Iluminación focalizada
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Lámparas decorativas
+         </td>
+         <td>
+          Iluminación
+         </td>
+         <td>
+          Interiores
+         </td>
+         <td>
+          Montaje de lámparas
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Adecuación de cableado
+         </td>
+         <td>
+          Eléctrico
+         </td>
+         <td>
+          Residencial
+         </td>
+         <td>
+          Organización y modificación
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </section>
+   <!-- GALERÍA -->
+   <section class="seccion" id="galeria">
+    <div class="contenedor">
+     <div class="titulo-seccion">
+      <span class="etiqueta">
+       INSPIRACIÓN PARA TU HOGAR
+      </span>
+      <h2>
+       Galería de iluminación
+      </h2>
+      <div class="subrayado">
+      </div>
+      <p>
+       Imágenes de referencia de instalaciones y ambientes que inspiran nuestros servicios.
+      </p>
+     </div>
+     <div class="galeria-contenedor">
+      <div class="galeria-elemento">
+       <img alt="Instalación eléctrica realizada por un profesional" src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+       <span>
+        Instalaciones eléctricas
+       </span>
+      </div>
+      <div class="galeria-elemento">
+       <img alt="Ambiente interior con iluminación LED" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+       <span>
+        Iluminación LED
+       </span>
+      </div>
+      <div class="galeria-elemento">
+       <img alt="Luces de techo en interior contemporáneo" src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+       <span>
+        Luces de techo
+       </span>
+      </div>
+      <div class="galeria-elemento">
+       <img alt="Lámpara decorativa en ambiente residencial" src="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+       <span>
+        Lámparas decorativas
+       </span>
+      </div>
+      <div class="galeria-elemento">
+       <img alt="Trabajo técnico en instalaciones" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+       <span>
+        Trabajo técnico
+       </span>
+      </div>
+      <div class="galeria-elemento">
+       <img alt="Apartamento moderno iluminado" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+       <span>
+        Espacios residenciales
+       </span>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- LLAMADO -->
+   <section class="llamado">
+    <div class="contenedor llamado-contenido">
+     <div>
+      <h2>
+       ¿Listo para transformar tu espacio?
+      </h2>
+      <p>
+       Cuéntanos qué necesitas y conversemos sobre tu proyecto.
+      </p>
+     </div>
+     <a class="boton boton-amarillo" href="#contacto">
+      Solicitar cotización →
+     </a>
+    </div>
+   </section>
+   <!-- CONTACTO -->
+   <section class="seccion seccion-clara" id="contacto">
+    <div class="contenedor contacto-contenido">
+     <div class="contacto-info">
+      <span class="etiqueta">
+       HABLEMOS DE TU PROYECTO
+      </span>
+      <h2>
+       Contáctanos
+      </h2>
+      <div class="subrayado">
+      </div>
+      <p>
+       ¿Necesitas una instalación eléctrica o quieres renovar la iluminación de tu hogar? Completa el formulario con los detalles de tu proyecto.
+      </p>
+      <div class="contacto-tarjeta">
+       <strong>
+        JS Eléctricos
+       </strong>
+       <p>
+        Seguridad que conecta. Iluminación que transforma.
+       </p>
+       <p>
+        Ciudad y datos de contacto: pendientes por definir.
+       </p>
+      </div>
+     </div>
+     <form action="#contacto" class="formulario" method="get">
+      <div class="formulario-fila">
+       <div class="campo">
+        <label for="nombre">
+         Nombre completo
+        </label>
+        <input id="nombre" name="nombre" placeholder="Tu nombre" required="" type="text"/>
+       </div>
+       <div class="campo">
+        <label for="correo">
+         Correo electrónico
+        </label>
+        <input id="correo" name="correo" placeholder="correo@ejemplo.com" required="" type="email"/>
+       </div>
+      </div>
+      <div class="formulario-fila">
+       <div class="campo">
+        <label for="telefono">
+         Teléfono
+        </label>
+        <input id="telefono" name="telefono" placeholder="Tu número de contacto" required="" type="tel"/>
+       </div>
+       <div class="campo">
+        <label for="ciudad">
+         Ciudad
+        </label>
+        <input id="ciudad" name="ciudad" placeholder="Tu ciudad" required="" type="text"/>
+       </div>
+      </div>
+      <div class="campo">
+       <label for="servicio">
+        Servicio de interés
+       </label>
+       <select id="servicio" name="servicio" required="">
+        <option value="">
+         Selecciona un servicio
+        </option>
+        <option>
+         Instalación eléctrica residencial
+        </option>
+        <option>
+         Adecuación de cableado
+        </option>
+        <option>
+         Cintas LED
+        </option>
+        <option>
+         Luces tipo bala
+        </option>
+        <option>
+         Lámparas decorativas
+        </option>
+        <option>
+         Adecuación de iluminación
+        </option>
+       </select>
+      </div>
+      <div class="campo">
+       <label for="mensaje">
+        Cuéntanos sobre tu proyecto
+       </label>
+       <textarea id="mensaje" name="mensaje" placeholder="Describe lo que necesitas..." required=""></textarea>
+      </div>
+      <button class="boton boton-azul" type="submit">
+       Enviar solicitud →
+      </button>
+      <p class="nota-formulario">
+       Formulario demostrativo para la evaluación. Para recibir mensajes se requiere configurar un servicio de envío.
+      </p>
+     </form>
+    </div>
+   </section>
+  </main>
+  <!-- FOOTER -->
+  <footer class="pie-pagina">
+   <div class="contenedor">
+    <div class="pie-contenido">
+     <div class="pie-columna">
+      <h3>
+       JS ELÉCTRICOS
+      </h3>
+      <p>
+       Seguridad que conecta.
+       <br/>
+       Iluminación que transforma.
+      </p>
+     </div>
+     <div class="pie-columna">
+      <h3>
+       Explorar
+      </h3>
+      <a href="#inicio">
+       Inicio
+      </a>
+      <a href="#nosotros">
+       Nosotros
+      </a>
+      <a href="#servicios">
+       Servicios
+      </a>
+      <a href="#galeria">
+       Galería
+      </a>
+     </div>
+     <div class="pie-columna">
+      <h3>
+       Servicios
+      </h3>
+      <p>
+       Instalaciones eléctricas
+      </p>
+      <p>
+       Cintas LED y luces tipo bala
+      </p>
+      <p>
+       Lámparas e iluminación
+      </p>
+     </div>
+     <div class="pie-columna">
+      <h3>
+       Contacto
+      </h3>
+      <p>
+       Ciudad: pendiente
+      </p>
+      <p>
+       Teléfono: pendiente
+      </p>
+      <p>
+       Correo: pendiente
+      </p>
+      <p>
+       Instagram: pendiente
+      </p>
+     </div>
+    </div>
+    <div class="pie-final">
+     © 2026 JS Eléctricos — Todos los derechos reservados.
+    </div>
+   </div>
+  </footer>
+ </body>
+</html>
